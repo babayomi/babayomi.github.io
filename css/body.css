@@ -1,0 +1,182 @@
+
+/*home page body style*/
+
+
+.intro-style {
+	background-color: #fdd87a;
+	width: 1160px;
+	border-radius: 5px;
+	box-shadow: 0 4px 5px rgba(0,0,0,0.1);
+	margin-top: 55px;
+}
+
+.introstyle-paragraph-container {
+	padding: 20px;
+	margin: 6px;
+}
+
+.introstyle-paragraph-container h1 {
+	font-size: 70px;
+	margin-left: 80px;
+	font-weight: 700;
+	margin-right: 100px;
+	margin-bottom: 30px;
+	
+}
+
+.statement {
+	display: flex;
+	margin-top: 60px;
+}
+
+
+.statement-style {
+	display: inline-flex;
+	margin: 0 9px 0 9px; 
+}
+
+
+.statement-style div:last-child {
+	margin-left: 10px;
+}
+
+
+.statement h2, h3, h4 {
+	font-weight: 700;
+	font-size: 30px;
+}
+
+
+.statement p {
+	font-weight: 300;
+}
+
+
+.statement img {
+	max-width: 100px;
+}
+
+.results {
+	display: block;
+}
+
+
+
+.results-style h2, h3, h4, h5 {
+	
+	font-size: 33px;
+	font-weight: bold;
+}
+
+
+.quick-fact {
+	background-color: #69c5ac;
+	width: 1160px;
+	border-radius: 5px;
+	box-shadow: 0 4px 5px rgba(0,0,0,0.1);
+	margin-top: 55px;
+}
+
+.quick-fact-style {
+	display: flex;
+	margin: 5em 5em 1em 5em; 
+	position: relative;
+	padding-left: 50px;
+}
+
+.quick-facr-style h2, h3, h4, h5 {
+	font-weight: 700;
+	font-size: 30px;
+}
+
+.quick-fact-style div {
+	padding-right: 40px;
+}
+
+.quick-fact-style img {
+	width: 100px;
+	height: 100px;
+}
+
+.quick-fact-style div:last-child {
+	margin-left: 10px;
+}
+
+
+
+/*home page body style*/
+
+
+/*news // post */
+
+.news-lay {
+	background-color: #aadeec;
+	width: 1160px;
+	border-radius: 5px;
+	box-shadow: 0 4px 5px rgba(0,0,0,0.1);
+	margin-top: 55px;
+}
+
+.news-lay img {
+	vertical-align: middle;
+	  width: 70px;
+	  height: 70px;
+	  border-radius: 50%;
+	  padding-top: 0;
+	  margin-left: 89px;
+	  box-shadow: 0 4px 5px rgba(0,0,0,0.1);
+}
+
+.news-lay h2 {
+	font-weight: lighter;
+	font-size: 25px;
+	margin: -70px 69px auto 190px;
+
+}
+
+.intro-style h1 {
+	font-family: inherit;
+	font-size: 69px;
+}
+
+.news-lay div p {
+	font-weight: lighter;
+	font-size: 18px;
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: 10em;
+	position: relative;
+	font-weight: lighter;
+
+}
+
+p {
+	font-weight: lighter;
+}
+
+
+
+.post-details {
+	margin-left: -170px
+}
+
+figcaption {
+    background-color: #69c5ac;
+    color: #414143;
+    font-family: inherit;
+    font-style: italic;
+    padding: 3px;
+    text-align: center;
+    font-size: 16px;
+    margin-top: -10px;
+    box-shadow: 0 4px 5px rgba(0,0,0,0.1);
+}
+
+article img {
+	max-width: 100%;
+	height: auto;
+}
+
+
+
+/*news // post */
