@@ -226,7 +226,7 @@ aside p {
 	font-weight: lighter;
 }
 
-.eligible{
+.eligible {
 	margin: 80px auto 80px auto;
 	background: #DCE6DF;
 	max-width: 1160px;
@@ -235,6 +235,14 @@ aside p {
   padding: 30px;
 }
 
+
+#inputCountry, 
+#inputAge, 
+#inputEnglish, 
+#inputFulltime {
+  border-radius: 5px;
+  border-style: none;
+}
 
 
 
