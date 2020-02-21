@@ -158,6 +158,9 @@ body {
 	border-radius: 5px;
 	box-shadow: 0 4px 5px rgba(0,0,0,0.1);
 	margin-top: 55px;
+  padding: 30px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .quick-fact-style {
@@ -190,6 +193,7 @@ body {
 .testing {
 	margin-top: 60px;
 	margin-bottom: 60px;
+  padding: 30px;
 }
 
 
@@ -220,7 +224,9 @@ aside p {
 	margin: 80px auto 80px auto;
 	background: #DCE6DF;
 	max-width: 1160px;
+  border-radius: 5px;
 	box-shadow: 0 4px 5px rgba(0,0,0,0.1);
+  padding: 30px;
 }
 
 
@@ -257,6 +263,8 @@ aside p {
 
 @media screen and (max-width:639px) {
 
+  /* HEAD */
+
     .main-nav {
         display: block;
     }
@@ -288,6 +296,40 @@ aside p {
     .main-nav-mobilehide {
         display:none;
     }
+
+/* BODY */
+
+
+    .quick-fact {
+        max-width: 1160px;
+        background-color: #f59f8b;
+        border-radius: 5px;
+        box-shadow: 0 4px 5px rgba(0,0,0,0.1);
+        margin-top: 55px;
+        padding: 30px;
+      }
+
+    .quick-fact-style {
+        display: block;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+    .quick-fact-style img {
+        max-width: 100px;
+      }
+
+    .quick-fact-style h2 {
+        font-weight: 700;
+        font-size: 30px;
+      }
+
+
+    .quick-fact-style p {
+        font-weight: 300;
+      }
 
 
 
