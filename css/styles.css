@@ -241,7 +241,9 @@ aside p {
 #inputEnglish, 
 #inputFulltime {
   border-radius: 5px;
-  border-style: none;
+  border-style: solid;
+  border-color: #69c5ac;
+  bor
 }
 
 
