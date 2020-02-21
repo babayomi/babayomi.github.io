@@ -106,6 +106,7 @@ body {
 /* BODY LAYOUT */
 
 
+
 .main_content {
 	max-width: 1160px;
     background: #fdd87a;
@@ -122,6 +123,11 @@ body {
 .introContent h1 {
 	margin: auto 100px auto 90px;
 	font-size: 60px;
+}
+
+
+div .introContent {
+  margin-top: 40px;
 }
 
 .statement {
