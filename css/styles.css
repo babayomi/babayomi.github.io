@@ -286,15 +286,20 @@ aside p {
     }
 
     .nav-toggle {
-        display:block;
+        display: inline-block;
         color: #414143;
         font-size: 1.4rem;
+        margin-bottom: auto;
+        margin-top: auto;
+        padding-bottom: 20px;
+        list-style: none;
     }
 
     .main-nav ul {
         display:block;
         overflow:hidden;
         margin-right: 150px;
+        
     }
 
     .main-nav li {
@@ -314,6 +319,47 @@ aside p {
     }
 
 /* BODY */
+
+    .introContent {
+        padding:30px 2px;
+    }
+
+    .introContent h1 {
+      overflow-wrap: break-word;
+      font-size: 40px;
+      letter-spacing: 5px;
+
+    }
+
+
+
+
+    .statement {
+      display: block;
+      margin-top: 60px;
+    }
+
+    .statement-style {
+      margin: 0 9px 0 9px; 
+    }
+
+    .statement-style div:last-child {
+      margin-left: 10px;
+    }
+
+    .statement h2 {
+      font-weight: 700;
+      font-size: 30px;
+    }
+
+    .statement p {
+      font-weight: 300;
+    }
+
+
+    .statement img {
+      max-width: 100px;
+    }
 
 
     .quick-fact {
