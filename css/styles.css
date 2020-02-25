@@ -319,20 +319,10 @@ aside p {
     }
 
 /* BODY */
-
-    .introContent {
-        padding:30px 2px;
-    }
-
+    
     .introContent h1 {
-      overflow-wrap: break-word;
-      font-size: 40px;
-      letter-spacing: 5px;
-
+      margin: auto;
     }
-
-
-
 
     .statement {
       display: block;
