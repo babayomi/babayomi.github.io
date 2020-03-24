@@ -61,12 +61,61 @@ p {
 .button, .input {
 	margin: 7px auto 7px auto;
 }
+ 
+/* Navbar Link Styling */
 
+header ul {
+  display: flex;
+  align-items: start;
+  list-style-type: none;
+}
+
+header ul li {
+  padding: 6px 0;
+}
 
 
 header li {
 	display: inline;
 	margin: auto 10px auto 10px;
+}
+
+header ul li a {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 17px;
+  color: #d74078;
+  text-transform: uppercase;
+  padding: 4px 0;
+  transition: 0.5s;
+}
+
+header ul li a::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 3px;
+  top: 100%;
+  left: 0;
+  background: #fdd87a;
+  transition: transform 0.5s;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+.logo {
+
+	width: 40em;
+	height: 5em;
+}
+
+header ul li a:hover {
+  color: #fdd87a;
+}
+header ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 footer {
@@ -99,14 +148,14 @@ footer {
 .bg-img { 
         background: url(https://girlsgoit.org/img/support-girlsgoit.jpg) no-repeat center center fixed;
         -webkit-background-size: cover;
-		  -moz-background-size: cover;
-		  -o-background-size: cover;
-		  background-size: cover;
-		   background-attachment: fixed;
-		  background-repeat: no-repeat;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
         padding: 1em;
 
  }
+
+
 
  .bg-img-home { 
         background: url(https://girlsgoit.org/img/apply-for-girlsgoit-summer-camp.jpg) no-repeat center center fixed;
@@ -114,8 +163,6 @@ footer {
 		  -moz-background-size: cover;
 		  -o-background-size: cover;
 		  background-size: cover;
-		  background-attachment: fixed;
-		  background-repeat: no-repeat;
         padding: 1em;
 
  }
@@ -131,7 +178,60 @@ footer {
 	height: 150px;
 }
 
+.form-bg {
+	background: linear-gradient(45deg, #f58f8b 35%, #aadeec 0, #f58f8b 0, #aadeec 0);
+    background-size: 72.4px 72.4px;
+}
 
+
+.white-bg {
+	border: 10px solid hsla(0,0%,100%,.5);
+	background: white;
+	background-clip: padding-box;
+	
+	/* styling */
+	
+	padding: 2em;
+}
+
+
+
+
+.test-question {
+	font-size: 25px;
+	line-height: 36px;
+	text-align: left;
+	background-color: #aadeec;
+	background-repeat: no-repeat;
+	padding: 45px 60px;
+	box-sizing: border-box;
+	font-family: inherit;
+	-webkit-box-sizing: border-box;
+	background-image: url(img/icons/regulations.svg);
+
+}
+
+.test-answer {
+	color: #414143;
+	background: #fdd87a;
+	padding: 80px 55px 150px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+
+}
+
+.button-next {
+	position: absolute;
+	right: 60px;
+	bottom: 50px;
+	letter-spacing: 0;
+	font-family: inherit;
+	z-index: 2;
+}
+
+.button {
+	font-family: inherit;
+}
 
 
 
