@@ -163,29 +163,7 @@ footer {
 }
 
 .form-bg {
-	background: linear-gradient(45deg, #f58f8b 35%, #aadeec 0, #f58f8b 0, #aadeec 0);
-    background-size: 72.4px 72.4px;
-}
-
-.form-bg-sponsor {
-	background: linear-gradient(45deg, #f58f8b 35%, #aadeec 0, #f58f8b 0, #aadeec 0);
-    background-size: 72.4px 72.4px;
-}
-
-
-.white-bg {
-	border: 10px solid hsla(0,0%,100%,.5);
-	background: white;
-	background-clip: padding-box;
-	
-	/* styling */
-	
-	padding: 2em;
-}
-
-
-.form-bg {
-	background: linear-gradient(45deg, #f58f8b 35%, #aadeec 0, #f58f8b 0, #aadeec 0);
+	background: linear-gradient(45deg, #ffd87a 35%, #aadeec 0, #f58f8b 0, #aadeec 0);
     background-size: 72.4px 72.4px;
 }
 
@@ -195,6 +173,7 @@ footer {
               #e97aac 0, #e97aac 75%, #fdd87a 0);
     background-size: 52.4px 52.4px;
 }
+
 
 .white-bg {
 	border: 10px solid hsla(0,0%,100%,.5);
@@ -267,12 +246,8 @@ a.navbar-item:hover {
 }
 
 ol li {
-	font-weight: 300;
-	font-family: 'Inter', sans-serif;
-	line-height: 1.7em;
+	line-height: 2.5em;
 	justify-content: space-around;
-	color: #414143;
-
 }
 
 
