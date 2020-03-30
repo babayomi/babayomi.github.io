@@ -90,8 +90,8 @@ header ul li a {
   display: block;
   text-decoration: none;
   font-family: inherit;
-  font-size: 17px;
-  color: #fdd97a;
+  font-size: 17px;s
+  color: #d74078;
   text-transform: uppercase;
   padding: 4px 0;
   transition: 0.5s;
@@ -104,7 +104,7 @@ header ul li a::after {
   height: 3px;
   top: 100%;
   left: 0;
-  background: #fdd87a;
+  background: #414143;
   transition: transform 0.9s;
   transform: scaleX(0);
   transform-origin: right;
@@ -116,7 +116,7 @@ header ul li a::after {
 }
 
 header ul li a:hover {
-  color: #fdd87a;
+  color: #414143;
 }
 header ul li a:hover::after {
   transform: scaleX(1);

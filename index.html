@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
-	<header class="section bg-img-home">
+	<header class="hero section bg-img-home">
 		<div class="container">
 			<nav class="level">
 				<div class="level-left">
@@ -33,31 +33,30 @@
 					</ul>
 				</div>
 			</nav>
-		</div>
-	</header>
-
-	
-
-	
-	<section class="hero support-cover is-large bg-img-home">
-		<div class="hero-body">
-			<div class="container">
+		
+		<!-- Hero content: will be in the middle -->
+ 
+			<div class="hero-body">
 				<div class="columns">
-					<div class="column is-one-third is-4 level">
-						<h1 class="title is-size-1 has-text-light">Apply for GirlsGoIT Summer STEAM Camp</h1>
+					<div class="column is-half">
+						<h1 class="title is-size-1 has-text-light">Apply for GirlsGoIT Summer Camp</h1>
 						<p class="subtitle is-4  has-text-warning sef-center">Check if you are eligible to apply</p>
+						<a href="#apply">
 						<button class="button">check eligibility</button>
+						</a>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
+			</div>
+	</header>
+
+	
 	<main class="section is-medium has-background-light level">
 		<div class="hero-body">
 			<div class="container">
 				<div class="columns is-centered">
 					<div class="column is-one-third is-4 level">
-							<h2 class="subtitle has-text-weight-semibold is-size-2">About the summer camp</h2>
+							<h2 class="subtitle has-text-weight-semibold is-size-2">About the camp</h2>
 							<p class="level">Join our 10-day summer camp. Meet and make new friends from around 20 regions in Moldova! </p>
 					</div>
 				</div>
@@ -85,12 +84,7 @@
 					<p class="level">Contrary to popular belief, Lorem Ipsum is not simply random text</p>
 				</div>
 				</div>
-				<div class="columns is-centered">
-					<div class="column is-one-third is-4">
-						<h4 class="subtitle is-2 is-size-4 level">View the summer camp agenda</h4>
-					<button class="button">agenda</button>
-					</div>
-				</div>
+				
 			</div>
 		</div>
 	</main>
@@ -139,22 +133,26 @@
 			<div class="container">
 				<div class="columns">
 					<div class="column is-one-third is-4 white-bg">
-						<img class="level is-centered" src="img/icons/regulation.svg" alt="GirlsGoIT eligibility form" width="250" height="250">
-						<h3 class="subtitle is-2 is-size-3">Check your eligibility to participate</h3>
+						<img id="apply" class="level is-centered" src="img/icons/regulation.svg" alt="GirlsGoIT eligibility form" width="250" height="250">
+						<h3 class="subtitle is-2 is-size-3">Check if you're eligible to apply</h3>
 						<p>These questions are designed to help figure out if you are eligible to apply for the camp program</p>
 						<br>
-						<button class="button is-danger is-fullwidth">Check</button>
+						<a href="apply.html">
+						<button class="button is-danger is-fullwidth">Apply</button>
+						</a>
 					</div>
 					<div class="column is-one-third is-4 white-bg">
 						<img class="level is-centered" src="img/icons/eligibility.svg" alt="GirlsGoIT summer camp location" width="250" height="250">
 						<h3 class="subtitle is-2 is-size-3">Read the camp rules & regulations</h3>
 						<p>These questions are designed to help figure out if you are eligible to apply for the camp program</p>
 						<br>
+						<a href="regulations.html">
 						<button class="button is-danger is-fullwidth">Read</button>
+						</a>
 					</div>
 					<div class="column is-one-third is-4 white-bg level">
 						<img class="level is-centered" src="img/icons/location.svg" alt="GirlsGoIT summer camp location" width="250" height="250">
-						<h3 class="subtitle is-2 is-size-3">Camp location & health check before arrival</h3>
+						<h3 class="subtitle is-2 is-size-3">Camp location & health check</h3>
 						<p>These questions are designed to help figure out if you are eligible to apply for the camp program</p>
 						<br>
 						<a href="arrival-and-health-check.html">
