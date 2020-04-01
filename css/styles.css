@@ -278,3 +278,31 @@ ol li {
 }
 
 
+ol li {
+	line-height: 29px;
+	font-weight: 300;
+	font-size: 19px;
+}
+
+
+.content blockquote {
+	background: #ffd87a;
+	line-height: 1.5em;
+	border-left: 5px solid #69c5ac;
+
+}
+
+
+.content blockquote a {
+	color: #d74078;
+	text-decoration: underline;
+}
+
+
+.intern-prep {
+	background: url(https://girlsgoit.org/preparation.svg) no-repeat;
+	padding: 0 20px 0 0
+
+}
+
+
