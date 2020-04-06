@@ -90,7 +90,7 @@ header ul li a {
   display: block;
   text-decoration: none;
   font-family: inherit;
-  font-size: 17px;s
+  font-size: 17px;
   color: #d74078;
   text-transform: uppercase;
   padding: 4px 0;
@@ -104,10 +104,11 @@ header ul li a::after {
   height: 3px;
   top: 100%;
   left: 0;
-  background: #414143;
+  background: #fdd87a;
   transition: transform 0.9s;
   transform: scaleX(0);
   transform-origin: right;
+  border-radius: 10px;
 }
 .logo {
 
@@ -116,7 +117,7 @@ header ul li a::after {
 }
 
 header ul li a:hover {
-  color: #414143;
+  color: #fdd87a;
 }
 header ul li a:hover::after {
   transform: scaleX(1);
@@ -246,8 +247,35 @@ a.navbar-item:hover {
 }
 
 ol li {
-	line-height: 2.5em;
-	justify-content: space-around;
+	line-height: 29px;
+	font-weight: 300;
+	font-size: 19px;
 }
 
 
+.content blockquote {
+	background: #ffd87a;
+	line-height: 1.5em;
+	border-left: 5px solid #69c5ac;
+
+}
+
+
+.content blockquote a {
+	color: #d74078;
+	text-decoration: underline;
+}
+
+
+.intern-prep {
+	background: url(https://girlsgoit.org/preparation.svg) no-repeat;
+	padding: 0 20px 0 0
+
+}
+
+
+.limp a {
+	font-weight: 700;
+	color: #69c5ac;
+	text-decoration: underline;
+}
