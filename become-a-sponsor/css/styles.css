@@ -17,7 +17,12 @@ body {
 	line-height: 25px;
 	color: #414143;
 	background-color: #fff;
+	background-size: cover;
 
+}
+
+html, body {
+	min-height: 100%;
 }
 
 h1 {
@@ -137,6 +142,8 @@ footer {
 		-o-background-size: cover;
 		background-size: cover;
         padding: 1em;
+        background-size: contain;
+		background-position: center;
 
  }
 

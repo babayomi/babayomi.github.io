@@ -277,4 +277,52 @@ ol li {
 
 }
 
+.limp a {
+	font-weight: 700;
+	color: #69c5ac;
+	text-decoration: underline;
+}
+
+
+
+figcaption iframe {
+	max-width: 100%;
+}
+
+.intern-xp {
+	background-color: #414143;
+}
+
+span p {
+	text-align: justify;
+	line-height: 15px;
+	
+}
+
+span {
+	color: #414143;
+	margin-left: -30px;
+
+}
+
+.box {
+	background-color: #414143;
+	padding: 70px;
+	line-height: 15px;
+}
+
+
+.hero-body {
+	margin-bottom: 90px;
+}
+
+
+
+
+/*Slider*/
+
+
+
+
+
 
