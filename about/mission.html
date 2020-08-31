@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>document.getElementsByTagName("html")[0].className += " js";</script>
-  <link id="codyframe" rel="stylesheet" href="assets/css/style.css">
+  <link id="codyframe" rel="stylesheet" href="../assets/css/style.css">
   <!-- browsers not supporting CSS variables -->
   <script>
     if(!('CSS' in window) || !CSS.supports('color', 'var(--color-var)')) {var cfStyle = document.getElementById('codyframe');if(cfStyle) {var href = cfStyle.getAttribute('href');href = href.replace('style.css', 'style-fallback.css');cfStyle.setAttribute('href', href);}}
@@ -14,7 +14,7 @@
 <body>
   <header class="f-header position-relative js-f-header">
   <div class="f-header__mobile-content container max-width-lg margin-top-md">
-    <a href="index.html" class="f-header__logo">
+    <a href="../index.html" class="f-header__logo">
           <img src="https://girlsgoit.org/girlsgoit-logo.svg">
       </a>
           <button class="reset anim-menu-btn js-anim-menu-btn f-header__nav-control js-tab-focus" aria-label="Toggle menu">
@@ -25,13 +25,13 @@
   <div class="f-header__nav margin-top-md" role="navigation">
     <div class="f-header__nav-grid justify-between@md container max-width-lg">
       <div class="f-header__nav-logo-wrapper flex-grow flex-basis-0">
-        <a href="index.html" class="f-header__logo">
+        <a href="../index.html" class="f-header__logo">
           <img src="https://girlsgoit.org/girlsgoit-logo.svg">
         </a>
       </div>
   
       <ul class="f-header__list flex-grow flex-basis-0 justify-center@md">
-        <li class="f-header__item"><a href="mission.html" class="f-header__link" aria-current="page">About</a></li>
+        <li class="f-header__item"><a href="about/mission.html" class="f-header__link" aria-current="page">About</a></li>
         <li class="f-header__item"><a href="#0" class="f-header__link">Program</a></li>
         <li class="f-header__item"><a href="#0" class="f-header__link">Community</a></li>
         <li class="f-header__item"><a href="#0" class="f-header__link">Contact</a></li>
@@ -386,6 +386,6 @@
   </div>
 </footer>
 
-<script src="assets/js/scripts.js"></script>
+<script src="../assets/js/scripts.js"></script>
 </body>
 </html>
