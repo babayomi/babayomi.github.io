@@ -117,12 +117,16 @@
     @include defineColorHSL(--color-error-lighter, 349, 75%, 67%);
 
     // color contrasts
-    @include defineColorHSL(--color-bg, 240, 2%, 26%);
-    @include defineColorHSL(--color-contrast-lower, 240, 2%, 29%);
-    @include defineColorHSL(--color-contrast-low, 240, 2%, 37%);
-    @include defineColorHSL(--color-contrast-medium, 240, 1%, 65%);
-    @include defineColorHSL(--color-contrast-high, 240, 2%, 91%);
+    @include defineColorHSL(--color-bg, 0, 0%, 15%);
+    @include defineColorHSL(--color-contrast-lower, 0, 0%, 18%);
+    @include defineColorHSL(--color-contrast-low, 0, 0%, 27%);
+    @include defineColorHSL(--color-contrast-medium, 0, 0%, 58%);
+    @include defineColorHSL(--color-contrast-high, 0, 0%, 89%);
     @include defineColorHSL(--color-contrast-higher, 0, 0%, 100%);
+
+    // font rendering
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
   }
 }
 
