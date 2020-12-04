@@ -39,6 +39,8 @@
     if(!infiniteScroll.options.path) { // content has been loaded using a custom function
       infiniteScroll.element.addEventListener('loaded-new', function(event){
         contentWasLoaded(infiniteScroll, event.detail.path, event.detail.checkNext); // reset element
+        // emit 'content-loaded' event -> this could be useful when new content needs to be initialized
+      infiniteScroll.element.dispatchEvent(new CustomEvent('content-loaded', {detail: event.detail.path}));
       });
     }
   };

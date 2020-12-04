@@ -44,8 +44,10 @@
 			;
 			if( !event.target.closest('.js-tabs__trigger') ) return;
 			if( tabNavigateNext(event, self.layout) ) {
+				event.preventDefault();
 				self.selectNewTab('next');
 			} else if( tabNavigatePrev(event, self.layout) ) {
+				event.preventDefault();
 				self.selectNewTab('prev');
 			}
 		});

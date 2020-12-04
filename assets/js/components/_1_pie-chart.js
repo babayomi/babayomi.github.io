@@ -228,7 +228,7 @@
       var endAngle =  startAngle + chart.percentageDelta[index]*(progress/duration);
 
       var path = chart.element.getElementsByClassName('js-pie-chart__data-path--'+(index+1))[0];
-      var pathCode = getPathCode(chart, startAngle, endAngle);;
+      var pathCode = getPathCode(chart, startAngle, endAngle);
       path.setAttribute('d', pathCode);
       
       if(progress < duration) {

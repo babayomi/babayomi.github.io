@@ -71,7 +71,7 @@ Usage: codyhouse.co/license
 // nav control - menu button
 .dr-nav-control-wrapper {
   position: fixed;
-  z-index: calc(var(--zindex-overlay) + 1);
+  z-index: var(--zindex-overlay);
   top: 0;
   left: 0;
   height: var(--dr-nav-header-height);

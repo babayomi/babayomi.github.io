@@ -175,6 +175,10 @@
       (!window.requestAnimationFrame) ? setTimeout(function(){resetLayout();}, 250) : window.requestAnimationFrame(resetLayout);
     });
 
+    (window.requestAnimationFrame) // init sidebar layout
+      ? window.requestAnimationFrame(resetLayout)
+      : resetLayout();
+
     function resetLayout() {
       for( var i = 0; i < sidebar.length; i++) {
         (function(i){sidebar[i].dispatchEvent(customEvent)})(i);

@@ -176,3 +176,9 @@ Usage: codyhouse.co/license
 html:not(.js) .carousel__list {
   overflow: auto;
 }
+
+.carousel--hide-controls {
+  .carousel__navigation, .carousel__control {
+    display: none;
+  }
+}

@@ -204,6 +204,15 @@
           filteredArray[i] = index >= value;
         } 
         return filteredArray;
+      },
+      searchInput: function(items) {
+        var filteredArray = [],
+          value = document.getElementById('search-products').value;
+        for(var i = 0; i < items.length; i++) {
+          var searchFilter = items[i].getAttribute('data-search');
+          filteredArray[i] = searchFilter == '' || searchFilter.toLowerCase().indexOf(value.toLowerCase()) > -1;
+        } 
+        return filteredArray;
       }
     });
   }

@@ -52,12 +52,14 @@
 		var self = this;
 		Util.addClass(this.element, this.showClass);
 		this.getFocusableElements();
-		this.moveFocusEl.focus();
-		// wait for the end of transitions before moving focus
-		this.element.addEventListener("transitionend", function cb(event) {
-			self.moveFocusEl.focus();
-			self.element.removeEventListener("transitionend", cb);
-		});
+		if(this.moveFocusEl) {
+			this.moveFocusEl.focus();
+			// wait for the end of transitions before moving focus
+			this.element.addEventListener("transitionend", function cb(event) {
+				self.moveFocusEl.focus();
+				self.element.removeEventListener("transitionend", cb);
+			});
+		}
 		this.emitModalEvents('modalIsOpen');
 	};
 

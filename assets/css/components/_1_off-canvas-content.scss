@@ -9,7 +9,7 @@ Usage: codyhouse.co/license
 
 :root {
   --off-canvas-panel-width: 400px;
-  --off-canvas-panel-width-opposite: -400px; // it should be equal to (--off-screen-panel-width * -1)
+  --off-canvas-panel-width-opposite: -400px; // 👆 it should be equal to (--off-screen-panel-width * -1)
   --off-canvas-animation-duration: 0.4s;
 }
 
@@ -23,13 +23,12 @@ Usage: codyhouse.co/license
   height: 100vh;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
-  background-color: var(--color-bg);
-  box-shadow: var(--shadow-md);
   will-change: transform;
   transition: transform var(--off-canvas-animation-duration) var(--ease-in-out); 
 }
 
-.off-canvas--visible .off-canvas__main { // off-canvas content is always full-width on small devices
+// default
+.off-canvas--visible .off-canvas__main { // off-canvas content = full-width on small devices
   transform: translateX(100%);
 }
 
@@ -39,7 +38,7 @@ Usage: codyhouse.co/license
   }
 }
 
-// right-side panel variation
+// --right
 .off-canvas--right.off-canvas--visible .off-canvas__main {
   transform: translateX(-100%);
 }
@@ -50,10 +49,21 @@ Usage: codyhouse.co/license
   }
 }
 
+// bottom
+.off-canvas--bottom.off-canvas--visible .off-canvas__main {
+  transform: translateY(-100%);
+}
+
+// top
+.off-canvas--top.off-canvas--visible .off-canvas__main {
+  transform: translateY(100%);
+}
+
 .off-canvas__close-btn { // if JS = disabled, hide panel close button
   display: none;
 }
 
+// JS = enabled
 .js {
   .off-canvas__panel {
     position: fixed;
@@ -88,29 +98,18 @@ Usage: codyhouse.co/license
 
   .off-canvas__close-btn {
     display: block;
-    position: fixed;
-    top: var(--space-xxs);
-    left: var(--space-xxs);
     width: 32px;
     height: 32px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background-color: alpha(var(--color-bg), 0.95);
-    box-shadow: var(--shadow-sm);
-    transform: translateX(-60px);
-    transition: transform .4s, background .2s, box-shadow .2s;
+    background-color: var(--color-bg);
+    box-shadow: var(--shadow-xs);
+    transition: .3s;
 
     &:hover {
-      background-color: var(--color-bg);
-      box-shadow: var(--shadow-md);
-    }
-    
-    .icon {
-      display: block;
-      color: var(--color-contrast-high); // icon color
-      font-size: 16px; // icon size
+      box-shadow: var(--shadow-sm);
     }
   }
 
@@ -123,14 +122,13 @@ Usage: codyhouse.co/license
       transform: translateX(0);
     }
 
-    .off-canvas__close-btn {
-      transform: translateX(0);
-      transition: transform .4s var(--off-canvas-animation-duration), background .2s 0s, box-shadow .2s 0s;
-      // transition-delay: var(--off-canvas-animation-duration);
+    &.off-canvas--bottom,
+    &.off-canvas--top {
+      transform: translateY(0);
     }
   }
 
-  // right-side panel variation
+  // --right
   .off-canvas--right {
     .off-canvas__panel {
       left: auto;
@@ -140,28 +138,31 @@ Usage: codyhouse.co/license
     &:not(.off-canvas--visible) .off-canvas__content {
       transform: translateX(50%);
     }
+  }
 
-    .off-canvas__close-btn {
-      left: auto;
-      right: var(--space-xxs);
+  // --bottom
+  .off-canvas--bottom {
+    &:not(.off-canvas--visible) .off-canvas__content {
+      transform: translateY(50px);
     }
+  }
 
-    &:not(.off-canvas--visible) .off-canvas__close-btn {
-      transform: translateX(60px);
+  // --top
+  .off-canvas--top {
+    &:not(.off-canvas--visible) .off-canvas__content {
+      transform: translateY(-50px);
     }
   }
 }
 
 // --full-width
-.off-canvas--full-width { 
-  --off-canvas-animation-duration: 0.75s; // increase animation duration if panel is full-screen
-
+.off-canvas--full-width {
   .off-canvas__close-btn {
-    width: 2em;
-    height: 2em;
-
-    .icon {
-      font-size: 1em;
-    }
+    width: 40px;
+    height: 40px;
+  }
+  
+  @include breakpoint(md) {
+    --off-canvas-animation-duration: 0.65s; // increase animation duration if panel is full-screen
   }
 }

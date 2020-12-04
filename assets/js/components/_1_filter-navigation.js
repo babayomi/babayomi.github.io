@@ -138,9 +138,11 @@
     });
 
     // wait for font to be loaded
-    document.fonts.onloadingdone = function (fontFaceSetEvent) {
-      doneResizing();
-    };
+    if(document.fonts) {
+      document.fonts.onloadingdone = function (fontFaceSetEvent) {
+        doneResizing();
+      };
+    }
 
     function doneResizing() {
       for( var i = 0; i < filterNavArray.length; i++) {

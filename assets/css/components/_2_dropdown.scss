@@ -50,6 +50,12 @@ Usage: codyhouse.co/license
   }
 }
 
+@media not all and (pointer: fine) {
+  .dropdown__trigger-icon {
+    display: none;
+  }
+}
+
 .dropdown__item {
   display: block;
   text-decoration: none;

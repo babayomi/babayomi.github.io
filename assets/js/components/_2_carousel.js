@@ -154,6 +154,8 @@
 
       // update arrow visility -> loop == off only
       resetCarouselControls(carousel);
+      // emit custom event - items visible
+      emitCarouselActiveItemsEvent(carousel)
     }
     // autoplay
     if(carousel.options.autoplay) {
@@ -212,6 +214,8 @@
         startAutoplay(carousel);
         centerItems(carousel); // center items if carousel.items.length < visibItemsNb
         alignControls(carousel);
+        // emit custom event - items visible
+        emitCarouselActiveItemsEvent(carousel)
       }, 250)
     });
   };
@@ -257,7 +261,7 @@
     if(!carousel.options.loop) {
       translate = noLoopTranslateValue(carousel, direction);
     }
-    setTranslate(carousel, 'translateX('+translate+')');
+    setTimeout(function() {setTranslate(carousel, 'translateX('+translate+')');});
     if(transitionSupported) {
       carousel.list.addEventListener('transitionend', function cb(event){
         if(event.propertyName && event.propertyName != 'transform') return;
@@ -274,6 +278,8 @@
     }
     resetCarouselControls(carousel);
     setCounterItem(carousel);
+    // emit custom event - items visible
+    emitCarouselActiveItemsEvent(carousel)
   };
 
   function noLoopTranslateValue(carousel, direction) {
@@ -511,6 +517,10 @@
       }
       Util.addClass(carousel.navDots[newSelectedIndex], carousel.options.navigationItemClass+'--selected');
     }
+
+    (carousel.totTranslate == 0 && (carousel.totTranslate == (- carousel.translateContainer - carousel.containerWidth) || carousel.items.length <= carousel.visibItemsNb))
+        ? Util.addClass(carousel.element, 'carousel--hide-controls')
+        : Util.removeClass(carousel.element, 'carousel--hide-controls');
   };
 
   function emitCarouselUpdateEvent(carousel) {
@@ -607,6 +617,10 @@
     for(var i = 0; i < carousel.controls.length; i++) {
       carousel.controls[i].style.marginBottom = translate + 'px';
     }
+  };
+
+  function emitCarouselActiveItemsEvent(carousel) {
+    emitCarouselEvents(carousel, 'carousel-active-items', {firstSelectedItem: carousel.selectedItem, visibleItemsNb: carousel.visibItemsNb});
   };
 
   function emitCarouselEvents(carousel, eventName, eventDetail) {

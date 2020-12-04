@@ -238,5 +238,9 @@
         (function(i){megaNavArray[i].element.dispatchEvent(customEvent)})(i);
       };
     };
+
+    (window.requestAnimationFrame) // init mega site nav layout
+      ? window.requestAnimationFrame(doneResizing)
+      : doneResizing();
   }
 }());

@@ -8,27 +8,29 @@ Usage: codyhouse.co/license
 -------------------------------- */
 :root {
   --popover-width: 250px;
-  --popover-vertical-gap: 4px; // vertical gap between the popover element and its control
+  --popover-control-gap: 4px; // ⚠️ use px units - vertical gap between the popover and its control
   --popover-viewport-gap: 20px; // ⚠️ use px units - vertical gap between the popover and the viewport - visible if popover height > viewport height
+  --popover-transition-duration: 0.2s;
 }
 
 .popover {
   position: fixed; // top/left position set in JS
   width: var(--popover-width);
   z-index: var(--zindex-popover);
-  margin-top: var(--popover-vertical-gap);
-  margin-bottom: var(--popover-vertical-gap);
+  margin-top: var(--popover-control-gap);
+  margin-bottom: var(--popover-control-gap);
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
 
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s .2s, opacity .2s;
+  transition: visibility 0s var(--popover-transition-duration), opacity var(--popover-transition-duration);
 }
 
 .popover--is-visible {
   visibility: visible;
   opacity: 1;
-  transition: visibility 0s, opacity .2s;
+  transition: visibility 0s, opacity var(--popover-transition-duration);
 }
 
 .popover-control--active {

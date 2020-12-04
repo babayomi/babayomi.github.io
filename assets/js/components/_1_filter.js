@@ -81,6 +81,14 @@
             : setFilterString(filter, i, 'button');
           updateFilterArray(filter);
         });
+
+        // target search inputs -> update them on 'input'
+        filter.controllers[i].addEventListener('input', function(event) {
+          if(event.target.tagName.toLowerCase() == 'input' && (event.target.getAttribute('type') == 'search' || event.target.getAttribute('type') == 'text') ) {
+            setFilterString(filter, i, 'custom');
+            updateFilterArray(filter);
+          }
+        });
       })(i);
     }
 

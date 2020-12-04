@@ -51,15 +51,16 @@ Usage: codyhouse.co/license
 // --grid
 .countdown--grid {
   .countdown__timer {
-    display: grid;
-    grid-template-columns: repeat(4, 1.6em);
-    grid-gap: var(--space-xxxs);
+    --timer-gap: var(--space-xxxs); // grid items gap
+    display: flex;
+    margin-left: calc(-1 * var(--timer-gap));
   }
 
   .countdown__item {
+    width: 1.6em;
     text-align: center;
     padding: var(--space-xxxxs) 0;
-    background-color: var(--color-bg);
+    margin-left: var(--timer-gap);
   }
 
   .countdown__item::after {

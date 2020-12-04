@@ -218,6 +218,18 @@
 		Util.addClass(slideshow.element, slideshow.animatingClass); 
 		if(index < 0) index = slideshow.items.length - 1;
 		else if(index >= slideshow.items.length) index = 0;
+		// skip slideshow item if it is hidden
+		if(bool && Util.hasClass(slideshow.items[index], 'is-hidden')) {
+			slideshow.animating = false;
+			index = bool == 'next' ? index + 1 : index - 1;
+			showNewItem(slideshow, index, bool);
+			return;
+		}
+		// index of new slide is equal to index of slide selected item
+		if(index == slideshow.selectedSlide) {
+			slideshow.animating = false;
+			return;
+		}
 		var exitItemClass = getExitItemClass(slideshow, bool, slideshow.selectedSlide, index);
 		var enterItemClass = getEnterItemClass(slideshow, bool, slideshow.selectedSlide, index);
 		// transition between slides

@@ -34,10 +34,10 @@
   };
 
   function setGridLayout(grid) { // set width of items in the grid
-    var contanerWidth = parseFloat(window.getComputedStyle(grid.element).getPropertyValue('width'));
-    grid.activeColumns = parseInt((contanerWidth + grid.colGap)/(grid.colStartWidth+grid.colGap));
+    var containerWidth = parseFloat(window.getComputedStyle(grid.element).getPropertyValue('width'));
+    grid.activeColumns = parseInt((containerWidth + grid.colGap)/(grid.colStartWidth+grid.colGap));
     if(grid.activeColumns == 0) grid.activeColumns = 1;
-    grid.colWidth = parseFloat((contanerWidth - (grid.activeColumns - 1)*grid.colGap)/grid.activeColumns);
+    grid.colWidth = parseFloat((containerWidth - (grid.activeColumns - 1)*grid.colGap)/grid.activeColumns);
     for(var i = 0; i < grid.items.length; i++) {
       grid.items[i].style.width = grid.colWidth+'px'; // reset items width
     }
@@ -75,7 +75,7 @@
     for(var i = 0; i < grid.items.length; i++) {
       var minHeight = Math.min.apply( Math, grid.colHeights ),
         index = grid.colHeights.indexOf(minHeight);
-      grid.colItems[index].push(i);
+      if(grid.colItems[index]) grid.colItems[index].push(i);
       grid.items[i].style.flexBasis = 0; // reset flex basis before getting height
       var itemHeight = grid.items[i].getBoundingClientRect().height || grid.items[i].offsetHeight || 1;
       grid.colHeights[index] = grid.colHeights[index] + grid.colGap + itemHeight;
@@ -105,15 +105,18 @@
     var imgs = grid.list.getElementsByTagName('img');
 
     function countLoaded() {
-      var count = 0;
+      var setTimeoutOn = false;
       for(var i = 0; i < imgs.length; i++) {
-        if (typeof imgs[i].naturalHeight !== "undefined" && imgs[i].naturalHeight == 0) {
+        if(!imgs[i].complete) {
+          setTimeoutOn = true;
+          break;
+        } else if (typeof imgs[i].naturalHeight !== "undefined" && imgs[i].naturalHeight == 0) {
+          setTimeoutOn = true;
           break;
         }
-        count = count+1;
       }
 
-      if(count == imgs.length) {
+      if(!setTimeoutOn) {
         layItems(grid);
       } else {
         setTimeout(function(){

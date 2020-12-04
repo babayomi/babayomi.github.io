@@ -29,6 +29,9 @@
 	};
 
 	Dropdown.prototype.placeElement = function() {
+		// remove inline style first
+		this.dropdown.removeAttribute('style');
+		// check dropdown position
 		var triggerPosition = this.trigger.getBoundingClientRect(),
 			isRight = (window.innerWidth < triggerPosition.left + parseInt(getComputedStyle(this.dropdown).getPropertyValue('width')));
 
@@ -56,6 +59,9 @@
 
 	Dropdown.prototype.showDropdown = function(){
 		if(this.hideInterval) clearInterval(this.hideInterval);
+		// remove style attribute
+		this.dropdown.removeAttribute('style');
+		this.placeElement();
 		this.showLevel(this.dropdown, true);
 	};
 
@@ -67,7 +73,7 @@
 				inFocus = dropDownFocus && (dropDownFocus == self.element);
 			// if not in focus and not hover -> hide
 			if(!self.triggerFocus && !self.dropdownFocus && !inFocus) {
-				self.hideLevel(self.dropdown);
+				self.hideLevel(self.dropdown, true);
 				// make sure to hide sub/dropdown
 				self.hideSubLevels();
 				self.prevFocus = false;
@@ -178,14 +184,16 @@
 		Util.removeClass(level, 'dropdown__menu--is-hidden');
 	};
 
-	Dropdown.prototype.hideLevel = function(level){
+	Dropdown.prototype.hideLevel = function(level, bool){
 		if(!Util.hasClass(level, 'dropdown__menu--is-visible')) return;
 		Util.removeClass(level, 'dropdown__menu--is-visible');
 		Util.addClass(level, 'dropdown__menu--is-hidden');
 		
-		level.addEventListener('animationend', function cb(){
-			level.removeEventListener('animationend', cb);
+		level.addEventListener('transitionend', function cb(event){
+			if(event.propertyName != 'opacity') return;
+			level.removeEventListener('transitionend', cb);
 			Util.removeClass(level, 'dropdown__menu--is-hidden dropdown__menu--left');
+			if(bool && !Util.hasClass(level, 'dropdown__menu--is-visible')) level.setAttribute('style', 'width: 0px');
 		});
 	};
 

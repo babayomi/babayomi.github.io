@@ -9,6 +9,7 @@ Usage: codyhouse.co/license
 
 :root {
   --anim-menu-btn-size: 48px;
+  --anim-menu-btn-transition-duration: .2s;
   
   // 🍔 icon
   --anim-menu-btn-icon-size: 32px;
@@ -21,7 +22,6 @@ Usage: codyhouse.co/license
   align-items: center;
   width: var(--anim-menu-btn-size);
   height: var(--anim-menu-btn-size);
-  color: var(--color-contrast-high); // icon color
 }
 
 // icons
@@ -52,7 +52,8 @@ Usage: codyhouse.co/license
 .anim-menu-btn__icon--close {
   background-size: 100% 100%;
   will-change: transform, background-size;
-  transition: transform .2s, background-size .2s;
+  transition-property: transform, background-size;
+  transition-duration: var(--anim-menu-btn-transition-duration, 0.2s);
 
   .anim-menu-btn:active & {
     transform: scale(0.9);
@@ -93,7 +94,8 @@ Usage: codyhouse.co/license
 .anim-menu-btn__icon--arrow-down {
   border-radius: 50em;
   will-change: transform;
-  transition: transform .2s;
+  transition-property: transform;
+  transition-duration: var(--anim-menu-btn-transition-duration, 0.2s);
 
   .anim-menu-btn:active & {
     transform: scale(0.9);
@@ -102,7 +104,8 @@ Usage: codyhouse.co/license
   &::before, &::after {
     transform-origin: calc(var(--anim-menu-btn-icon-stroke)/2) 50%;
     will-change: transform, width;
-    transition: transform .2s, width .2s;
+    transition-property: transform, width;
+    transition-duration: var(--anim-menu-btn-transition-duration, 0.2s);
   }
 
   &::before { // line top

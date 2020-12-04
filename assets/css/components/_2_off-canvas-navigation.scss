@@ -7,7 +7,7 @@ Usage: codyhouse.co/license
 
 -------------------------------- */
 
-// navigation button
+// navigation control
 .offnav-control { // variation of the Animated Menu Button component
   --anim-menu-btn-size: 48px;
   // 🍔 icon
@@ -47,27 +47,10 @@ Usage: codyhouse.co/license
   transition-delay: 0.3s;
 }
 
-// content
-.off-canvas--navigation .off-canvas__content {
-  padding: var(--space-lg) var(--component-padding);
-}
-
 // off-canvas navigation
-.offnav {
-  height: 100%;
-  text-align: center;
-}
-
-.offnav__nav {
-  margin-bottom: var(--space-lg);
-}
-
-.offnav__item {
-  margin-bottom: var(--space-sm);
-}
+.offnav {}
 
 .offnav__link {
-  font-size: var(--text-xxl);
   color: var(--color-contrast-higher);
   text-decoration: none;
   background-size: 0% 100%;
@@ -76,22 +59,13 @@ Usage: codyhouse.co/license
   will-change: background-size;
   transition: background-size .3s var(--ease-in-out), color .3s;
 
-  &:hover, &[aria-current="page"] {
+  &:hover, &[aria-current="page"], &.offnav__link--current {
     color: var(--color-primary);
   }
 
   &:hover {
     background-size: 100% 100%;
   }
-}
-
-// secondary navigation
-.offnav__subitem {
-  margin-bottom: var(--space-sm);
-}
-
-.offnav__sublink {
-  color: var(--color-contrast-higher);
 }
 
 .offnav__a11y-close-btn { // accessible close button - sr and keyboard
@@ -116,18 +90,7 @@ Usage: codyhouse.co/license
 }
 
 @include breakpoint(md) {
-  .off-canvas--navigation .off-canvas__content {
-    padding: var(--space-md) 0;
-  }
-
-  .offnav {
-    text-align: initial;
-  }
-
-  .offnav__item--label { // - navigation
-    font-size: var(--text-sm);
-    margin-bottom: var(--space-md);
-
+  .offnav__label { // - navigation
     &::before {
       content: '';
       display: inline-block;
@@ -139,31 +102,8 @@ Usage: codyhouse.co/license
     }
   }
 
-  .offnav__link {
-    font-size: calc(var(--text-xxl)*1.2);
-  }
-
   .offnav__subnav {
-    margin-top: auto;
-    padding-top: var(--space-xs);
     border-top: 1px solid var(--color-contrast-low);
-  }
-
-  .offnav__sublist {
-    display: flex;
-  }
-
-  .offnav__subitem {
-    font-size: var(--text-xs);
-    margin-right: var(--space-xs);
-
-    &:first-child {
-      margin-right: auto; // move @copyright to the left
-    }
-
-    &:last-child {
-      margin-right: 0;
-    }
   }
 }
 

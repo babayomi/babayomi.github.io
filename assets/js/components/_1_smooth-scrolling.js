@@ -2,10 +2,13 @@
 // Usage: codyhouse.co/license
 (function() {
 	var SmoothScroll = function(element) {
+		if(!('CSS' in window) || !CSS.supports('color', 'var(--color-var)')) return;
 		this.element = element;
 		this.scrollDuration = parseInt(this.element.getAttribute('data-duration')) || 300;
-		this.dataElement = this.element.getAttribute('data-scrollable-element') || this.element.getAttribute('data-element');
-		this.scrollElement = this.dataElement ? document.querySelector(this.dataElement) : window;
+		this.dataElementY = this.element.getAttribute('data-scrollable-element-y') || this.element.getAttribute('data-scrollable-element') || this.element.getAttribute('data-element');
+		this.scrollElementY = this.dataElementY ? document.querySelector(this.dataElementY) : window;
+		this.dataElementX = this.element.getAttribute('data-scrollable-element-x');
+		this.scrollElementX = this.dataElementY ? document.querySelector(this.dataElementX) : window;
 		this.initScroll();
 	};
 
@@ -18,21 +21,54 @@
 			var targetId = event.target.closest('.js-smooth-scroll').getAttribute('href').replace('#', ''),
 				target = document.getElementById(targetId),
 				targetTabIndex = target.getAttribute('tabindex'),
-				windowScrollTop = self.scrollElement.scrollTop || document.documentElement.scrollTop;
+				windowScrollTop = self.scrollElementY.scrollTop || document.documentElement.scrollTop;
 
-			if(!self.dataElement) windowScrollTop = window.scrollY || document.documentElement.scrollTop;
+			// scroll vertically
+			if(!self.dataElementY) windowScrollTop = window.scrollY || document.documentElement.scrollTop;
 
-			var scrollElement = self.dataElement ? self.scrollElement : false;
+			var scrollElementY = self.dataElementY ? self.scrollElementY : false;
 
 			var fixedHeight = self.getFixedElementHeight(); // check if there's a fixed element on the page
 			Util.scrollTo(target.getBoundingClientRect().top + windowScrollTop - fixedHeight, self.scrollDuration, function() {
+				// scroll horizontally
+				self.scrollHorizontally(target, fixedHeight);
 				//move the focus to the target element - don't break keyboard navigation
 				Util.moveFocus(target);
 				history.pushState(false, false, '#'+targetId);
 				self.resetTarget(target, targetTabIndex);
-			}, scrollElement);
+			}, scrollElementY);
 		});
 	};
+
+	SmoothScroll.prototype.scrollHorizontally = function(target, delta) {
+    var scrollEl = this.dataElementX ? this.scrollElementX : false;
+    var windowScrollLeft = this.scrollElementX ? this.scrollElementX.scrollLeft : document.documentElement.scrollLeft;
+    var final = target.getBoundingClientRect().left + windowScrollLeft - delta,
+      duration = this.scrollDuration;
+
+    var element = scrollEl || window;
+    var start = element.scrollLeft || document.documentElement.scrollLeft,
+      currentTime = null;
+
+    if(!scrollEl) start = window.scrollX || document.documentElement.scrollLeft;
+		// return if there's no need to scroll
+    if(Math.abs(start - final) < 5) return;
+        
+    var animateScroll = function(timestamp){
+      if (!currentTime) currentTime = timestamp;        
+      var progress = timestamp - currentTime;
+      if(progress > duration) progress = duration;
+      var val = Math.easeInOutQuad(progress, start, final-start, duration);
+      element.scrollTo({
+				left: val,
+			});
+      if(progress < duration) {
+        window.requestAnimationFrame(animateScroll);
+      }
+    };
+
+    window.requestAnimationFrame(animateScroll);
+  };
 
 	SmoothScroll.prototype.resetTarget = function(target, tabindex) {
 		if( parseInt(target.getAttribute('tabindex')) < 0) {
@@ -42,7 +78,8 @@
 	};
 
 	SmoothScroll.prototype.getFixedElementHeight = function() {
-		var fixedElementDelta = parseInt(getComputedStyle(document.documentElement).getPropertyValue('scroll-padding'));
+		var scrollElementY = this.dataElementY ? this.scrollElementY : document.documentElement;
+    var fixedElementDelta = parseInt(getComputedStyle(scrollElementY).getPropertyValue('scroll-padding'));
 		if(isNaN(fixedElementDelta) ) { // scroll-padding not supported
 			fixedElementDelta = 0;
 			var fixedElement = document.querySelector(this.element.getAttribute('data-fixed-element'));

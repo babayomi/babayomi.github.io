@@ -8,7 +8,10 @@ Usage: codyhouse.co/license
 -------------------------------- */
 
 // >>> style affecting all (block + expanded) versions 👇
-.table {}
+.table {
+  position: relative;
+  z-index: 1;
+}
 // <<< end style affecting all versions
 
 // >>> block version only (mobile) 👇

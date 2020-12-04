@@ -43,28 +43,29 @@
       type: 'column',
       xAxis: {
         line: true,
-        labels: ['2017 - 2018', '2018 - 2019'],
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        legend: 'Months',
         ticks: true
       },
       yAxis: {
-        legend: 'ICT students in higher education ',
+        legend: 'Total',
         labels: true
       },
       datasets: [
-        {data: [757, 726]},
-        {data: [3503, 3576]}
+        {data: [1, 2, 3, 12, 8, 7, 10, 4, 9, 5, 16, 3]},
+        {data: [4, 8, 10, 12, 15, 11, 7, 3, 5, 2, 12, 6]}
       ],
       column: {
         width: '60%',
-        gap: '10px',
+        gap: '2px',
         radius: '4px'
       },
       tooltip: {
         enabled: true,
         customHTML: function(index, chartOptions, datasetIndex) {
           var html = '<p class="margin-bottom-xxs">Total '+chartOptions.xAxis.labels[index] + '</p>';
-          html = html + '<p class="flex items-center"><span class="height-xxxs width-xxxs radius-50% bg-primary margin-right-xxs"></span> girls' +chartOptions.datasets[0].data[index]+'</p>';
-          html = html + '<p class="flex items-center"><span class="height-xxxs width-xxxs radius-50% bg-contrast-higher margin-right-xxs"></span>total' +chartOptions.datasets[1].data[index]+'</p>';
+          html = html + '<p class="flex items-center"><span class="height-xxxs width-xxxs radius-50% bg-primary margin-right-xxs"></span>$'+chartOptions.datasets[0].data[index]+'</p>';
+          html = html + '<p class="flex items-center"><span class="height-xxxs width-xxxs radius-50% bg-contrast-higher margin-right-xxs"></span>$'+chartOptions.datasets[1].data[index]+'</p>';
           return html;
         },
         position: 'top'
