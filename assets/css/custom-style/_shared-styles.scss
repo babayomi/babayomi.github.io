@@ -32,23 +32,6 @@
 
 // --------------------------------
 
-.hover\:elevate {
-  box-shadow: var(--shadow-sm);
-  transition: all 0.3s ease;
-
-  &:hover {
-    box-shadow: var(--shadow-md);
-  }
-}
-
-.hover\:scale {
-  transition: all 0.3s var(--ease-out-back);
-
-  &:hover {
-    transform: scale(1.1);
-  }
-}
-
 .hover\:reduce-opacity {
   opacity: 1;
   transition: all 0.3s ease;
@@ -58,9 +41,26 @@
   }
 }
 
+.hover\:scale {
+  transition: transform 0.3s var(--ease-out-back);
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.hover\:elevate {
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: var(--shadow-md);
+  }
+}
+
 // text styles
 .link-subtle {
-  color: var(--color-contrast-high);
+  color: inherit;
   cursor: pointer;
   text-decoration: none;
   transition: all 0.2s ease;

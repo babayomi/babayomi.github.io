@@ -9,6 +9,8 @@
 		// we'll use these to store the node that needs to receive focus when the mobile menu is closed 
 		var focusMenu = false;
 
+		resetFlexHeaderOffset();
+
 		menuTrigger.addEventListener('anim-menu-btn-clicked', function(event){
 			toggleMenuNavigation(event.detail);
 		});
@@ -58,6 +60,7 @@
 			if( !isVisible(menuTrigger) && Util.hasClass(flexHeader[0], 'f-header--expanded')) {
 				menuTrigger.click();
 			}
+			resetFlexHeaderOffset();
 		};
 		
 		function toggleMenuNavigation(bool) { // toggle menu visibility on small devices
@@ -69,6 +72,11 @@
 				focusMenu.focus();
 				focusMenu = false;
 			}
+		};
+
+		function resetFlexHeaderOffset() {
+			// on mobile -> update max height of the flexi header based on its offset value (e.g., if there's a fixed pre-header element)
+			document.documentElement.style.setProperty('--f-header-offset', flexHeader[0].getBoundingClientRect().top+'px');
 		};
 	}
 }());

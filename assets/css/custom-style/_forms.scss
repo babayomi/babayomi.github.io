@@ -4,13 +4,18 @@
 
 // --------------------------------
 
-.form-control {
-  --form-control-padding-x: var(--space-sm);
-  --form-control-padding-y: var(--space-xs);
+:root {
+  --form-control-font-size: 1em;
+  --form-control-padding-x: var(--space-xs);
+  --form-control-padding-y: var(--space-xxs);
   --form-control-radius: 0.25em;
-  background-color: var(--color-bg);
+}
+
+.form-control {
+  background: var(--color-bg);
   border: 2px solid var(--color-contrast-low);
-  transition: all 0.3s ease;
+  line-height: 1.2;
+  transition: all 0.2s ease;
 
   &::placeholder {
     opacity: 1;  

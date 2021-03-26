@@ -8,6 +8,7 @@
 // );
 
 @import '../../../node_modules/codyhouse-framework/main/assets/css/base';
+/*! purgecss start ignore */
 @import 'custom-style';
 @import 'components/**/*.scss';
-@import 'components/**/*.scss';
+/*! purgecss end ignore */
