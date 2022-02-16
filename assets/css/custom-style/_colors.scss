@@ -8,23 +8,29 @@
 
 :root, [data-theme="default"] {
   // main
-  @include defineColorHSL(--color-primary-darker, 282, 96%, 13%);
-  @include defineColorHSL(--color-primary-dark, 282, 96%, 23%);
-  @include defineColorHSL(--color-primary, 282, 96%, 33%);
-  @include defineColorHSL(--color-primary-light, 282, 96%, 43%);
-  @include defineColorHSL(--color-primary-lighter, 282, 96%, 53%);
+  @include defineColorHSL(--color-primary-darker, 20, 68%, 65%);
+  @include defineColorHSL(--color-primary-dark, 20, 68%, 75%);
+  @include defineColorHSL(--color-primary, 20, 68%, 85%);
+  @include defineColorHSL(--color-primary-light, 20, 68%, 93%);
+  @include defineColorHSL(--color-primary-lighter, 20, 68%, 100%);
 
-  @include defineColorHSL(--color-accent-darker, 50, 96%, 28%);
-  @include defineColorHSL(--color-accent-dark, 50, 96%, 38%);
-  @include defineColorHSL(--color-accent, 50, 96%, 48%);
-  @include defineColorHSL(--color-accent-light, 50, 96%, 58%);
-  @include defineColorHSL(--color-accent-lighter, 50, 96%, 68%);
+  @include defineColorHSL(--color-accent-darker, 187, 55%, 51%);
+  @include defineColorHSL(--color-accent-dark, 187, 55%, 61%);
+  @include defineColorHSL(--color-accent, 187, 55%, 71%);
+  @include defineColorHSL(--color-accent-light, 187, 55%, 81%);
+  @include defineColorHSL(--color-accent-lighter, 187, 55%, 91%);
 
-  @include defineColorHSL(--color-secondary-darker, 124, 33%, 17%);
-  @include defineColorHSL(--color-secondary-dark, 124, 33%, 27%);
-  @include defineColorHSL(--color-secondary, 124, 33%, 37%);
-  @include defineColorHSL(--color-secondary-light, 124, 33%, 47%);
-  @include defineColorHSL(--color-secondary-lighter, 124, 33%, 57%);
+  @include defineColorHSL(--color-tiertary-darker, 337, 85%, 54%);
+  @include defineColorHSL(--color-tiertary-dark, 337, 85%, 64%);
+  @include defineColorHSL(--color-tiertary, 337, 85%, 74%);
+  @include defineColorHSL(--color-tiertary-light, 337, 85%, 84%);
+  @include defineColorHSL(--color-tiertary-lighter, 337, 85%, 94%);
+
+  @include defineColorHSL(--color-tertiary-darker, 224, 100%, 0%);
+  @include defineColorHSL(--color-tertiary-dark, 224, 100%, 8%);
+  @include defineColorHSL(--color-tertiary, 224, 100%, 17%);
+  @include defineColorHSL(--color-tertiary-light, 224, 100%, 27%);
+  @include defineColorHSL(--color-tertiary-lighter, 224, 100%, 37%);
 
   @include defineColorHSL(--color-black, 204, 28%, 7%);
   @include defineColorHSL(--color-white, 0, 0%, 100%);
@@ -49,22 +55,18 @@
   @include defineColorHSL(--color-error-lighter, 342, 89%, 62%);
 
   // background
-  @include defineColorHSL(--color-bg-darker, 240, 2%, 92%);
-  @include defineColorHSL(--color-bg-dark, 240, 4%, 95%);
-  @include defineColorHSL(--color-bg, 0, 0%, 100%);
-  @include defineColorHSL(--color-bg-light, 240, 4%, 100%);
-  @include defineColorHSL(--color-bg-lighter, 240, 2%, 100%);
+  @include defineColorHSL(--color-bg-darker, 28, 21%, 88%);
+  @include defineColorHSL(--color-bg-dark, 35, 36%, 91%);
+  @include defineColorHSL(--color-bg, 42, 92%, 95%);
+  @include defineColorHSL(--color-bg-light, 35, 36%, 99%);
+  @include defineColorHSL(--color-bg-lighter, 28, 21%, 100%);
 
   // color contrasts
-  @include defineColorHSL(--color-contrast-lower, 0, 0%, 88%);
-  @include defineColorHSL(--color-contrast-low, 240, 1%, 72%);
-  @include defineColorHSL(--color-contrast-medium, 240, 1%, 58%);
-  @include defineColorHSL(--color-contrast-high, 240, 1%, 38%);
-  @include defineColorHSL(--color-contrast-higher, 240, 2%, 26%);
-
-  // gradients
-  @include defineColorHSL(--gradient-primary-stop-1, 282, 96%, 33%);
-  @include defineColorHSL(--gradient-primary-stop-2, 332, 96%, 33%);
+  @include defineColorHSL(--color-contrast-lower, 13, 11%, 85%);
+  @include defineColorHSL(--color-contrast-low, 259, 10%, 70%);
+  @include defineColorHSL(--color-contrast-medium, 246, 14%, 57%);
+  @include defineColorHSL(--color-contrast-high, 236, 27%, 39%);
+  @include defineColorHSL(--color-contrast-higher, 224, 63%, 25%);
 }
 
 @supports(--css: variables) {
@@ -82,11 +84,17 @@
     @include defineColorHSL(--color-accent-light, 342, 92%, 60%);
     @include defineColorHSL(--color-accent-lighter, 342, 92%, 65%);
 
-    @include defineColorHSL(--color-secondary-darker, 282, 96%, 13%);
-    @include defineColorHSL(--color-secondary-dark, 282, 96%, 23%);
-    @include defineColorHSL(--color-secondary, 282, 96%, 33%);
-    @include defineColorHSL(--color-secondary-light, 282, 96%, 43%);
-    @include defineColorHSL(--color-secondary-lighter, 282, 96%, 53%);
+    @include defineColorHSL(--color-tiertary-darker, 20, 68%, 65%);
+    @include defineColorHSL(--color-tiertary-dark, 20, 68%, 75%);
+    @include defineColorHSL(--color-tiertary, 20, 68%, 85%);
+    @include defineColorHSL(--color-tiertary-light, 20, 68%, 93%);
+    @include defineColorHSL(--color-tiertary-lighter, 20, 68%, 100%);
+
+    @include defineColorHSL(--color-tertiary-darker, 20, 68%, 65%);
+    @include defineColorHSL(--color-tertiary-dark, 20, 68%, 75%);
+    @include defineColorHSL(--color-tertiary, 20, 68%, 85%);
+    @include defineColorHSL(--color-tertiary-light, 20, 68%, 93%);
+    @include defineColorHSL(--color-tertiary-lighter, 20, 68%, 100%);
 
     @include defineColorHSL(--color-black, 204, 28%, 7%);
     @include defineColorHSL(--color-white, 0, 0%, 100%);
@@ -124,39 +132,35 @@
     @include defineColorHSL(--color-contrast-high, 223, 8%, 82%);
     @include defineColorHSL(--color-contrast-higher, 240, 100%, 99%);
 
-    // gradients
-    @include defineColorHSL(--gradient-primary-stop-1, 282, 96%, 33%);
-    @include defineColorHSL(--gradient-primary-stop-2, 332, 96%, 33%);
+    // font rendering
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
 // background color
-.bg-secondary-darker { background-color: alpha(var(--color-secondary-darker), var(--bg-o, 1)); }
-.bg-secondary-dark { background-color: alpha(var(--color-secondary-dark), var(--bg-o, 1)); }
-.bg-secondary { background-color: alpha(var(--color-secondary), var(--bg-o, 1)); }
-.bg-secondary-light { background-color: alpha(var(--color-secondary-light), var(--bg-o, 1)); }
-.bg-secondary-lighter { background-color: alpha(var(--color-secondary-lighter), var(--bg-o, 1)); }
-
-// background gradient
-.bg-gradient-primary { background-image: radial-gradient(var(--gradient-primary-stop-1), var(--gradient-primary-stop-2)); }
-.bg-gradient-primary-top { background-image: linear-gradient(0deg, var(--gradient-primary-stop-1), var(--gradient-primary-stop-2)); }
-.bg-gradient-primary-right { background-image: linear-gradient(90deg, var(--gradient-primary-stop-1), var(--gradient-primary-stop-2)); }
-.bg-gradient-primary-bottom { background-image: linear-gradient(180deg, var(--gradient-primary-stop-1), var(--gradient-primary-stop-2)); }
-.bg-gradient-primary-left { background-image: linear-gradient(270deg, var(--gradient-primary-stop-1), var(--gradient-primary-stop-2)); }
-
-// border gradient
-.border-gradient-primary { border-image: radial-gradient(var(--gradient-primary-stop-1), var(--gradient-primary-stop-2)) 1; }
-.border-gradient-primary-top { border-image: linear-gradient(0deg, var(--gradient-primary-stop-1), var(--gradient-primary-stop-2)) 1; }
-.border-gradient-primary-right { border-image: linear-gradient(90deg, var(--gradient-primary-stop-1), var(--gradient-primary-stop-2)) 1; }
-.border-gradient-primary-bottom { border-image: linear-gradient(180deg, var(--gradient-primary-stop-1), var(--gradient-primary-stop-2)) 1; }
-.border-gradient-primary-left { border-image: linear-gradient(270deg, var(--gradient-primary-stop-1), var(--gradient-primary-stop-2)) 1; }
+.bg-tiertary-darker { background-color: alpha(var(--color-tiertary-darker), var(--bg-o, 1)); }
+.bg-tiertary-dark { background-color: alpha(var(--color-tiertary-dark), var(--bg-o, 1)); }
+.bg-tiertary { background-color: alpha(var(--color-tiertary), var(--bg-o, 1)); }
+.bg-tiertary-light { background-color: alpha(var(--color-tiertary-light), var(--bg-o, 1)); }
+.bg-tiertary-lighter { background-color: alpha(var(--color-tiertary-lighter), var(--bg-o, 1)); }
+.bg-tertiary-darker { background-color: alpha(var(--color-tertiary-darker), var(--bg-o, 1)); }
+.bg-tertiary-dark { background-color: alpha(var(--color-tertiary-dark), var(--bg-o, 1)); }
+.bg-tertiary { background-color: alpha(var(--color-tertiary), var(--bg-o, 1)); }
+.bg-tertiary-light { background-color: alpha(var(--color-tertiary-light), var(--bg-o, 1)); }
+.bg-tertiary-lighter { background-color: alpha(var(--color-tertiary-lighter), var(--bg-o, 1)); }
 
 // border color
-.border-secondary-darker { border-color: alpha(var(--color-secondary-darker), var(--bg-o, 1)); }
-.border-secondary-dark { border-color: alpha(var(--color-secondary-dark), var(--bg-o, 1)); }
-.border-secondary { border-color: alpha(var(--color-secondary), var(--bg-o, 1)); }
-.border-secondary-light { border-color: alpha(var(--color-secondary-light), var(--bg-o, 1)); }
-.border-secondary-lighter { border-color: alpha(var(--color-secondary-lighter), var(--bg-o, 1)); }
+.border-tiertary-darker { border-color: alpha(var(--color-tiertary-darker), var(--bg-o, 1)); }
+.border-tiertary-dark { border-color: alpha(var(--color-tiertary-dark), var(--bg-o, 1)); }
+.border-tiertary { border-color: alpha(var(--color-tiertary), var(--bg-o, 1)); }
+.border-tiertary-light { border-color: alpha(var(--color-tiertary-light), var(--bg-o, 1)); }
+.border-tiertary-lighter { border-color: alpha(var(--color-tiertary-lighter), var(--bg-o, 1)); }
+.border-tertiary-darker { border-color: alpha(var(--color-tertiary-darker), var(--bg-o, 1)); }
+.border-tertiary-dark { border-color: alpha(var(--color-tertiary-dark), var(--bg-o, 1)); }
+.border-tertiary { border-color: alpha(var(--color-tertiary), var(--bg-o, 1)); }
+.border-tertiary-light { border-color: alpha(var(--color-tertiary-light), var(--bg-o, 1)); }
+.border-tertiary-lighter { border-color: alpha(var(--color-tertiary-lighter), var(--bg-o, 1)); }
 
 // --------------------------------
 

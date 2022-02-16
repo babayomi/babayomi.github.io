@@ -8,21 +8,21 @@
 
 :root {
   // font family
-  --font-primary: interstate, system-ui, sans-serif;
+  --font-primary: sofia-pro, system-ui, sans-serif;
 
   // font size
   --text-base-size: 1rem; // body font-size
   --text-scale-ratio: 1.2; // multiplier used to generate the type scale values 👇
   
   // line-height
-  --body-line-height: 1.4;
+  --body-line-height: 1.6;
   --heading-line-height: 1.2;
   
   // capital letters - used in combo with the lhCrop mixin
   --font-primary-capital-letter: 1;
 
   // unit - don't modify unless you want to change the typography unit (e.g., from Rem to Em units)
-  --text-unit: var(--text-base-size); // if Em units → --text-unit: var(--text-base-size);
+  --text-unit: var(--text-base-size); // if Em units → --text-unit: 1em;
 }
 
 :root, * {
@@ -47,6 +47,7 @@
 
 body {
   font-family: var(--font-primary);
+  --body-font-weight: 400;
 }
 
 h1, h2, h3, h4 {
@@ -58,17 +59,16 @@ h1, h2, h3, h4 {
 .font-primary { font-family: var(--font-primary); }
 
 // color
-.color-secondary-darker { color: alpha(var(--color-secondary-darker), var(--color-o, 1)); }
-.color-secondary-dark { color: alpha(var(--color-secondary-dark), var(--color-o, 1)); }
-.color-secondary { color: alpha(var(--color-secondary), var(--color-o, 1)); }
-.color-secondary-light { color: alpha(var(--color-secondary-light), var(--color-o, 1)); }
-.color-secondary-lighter { color: alpha(var(--color-secondary-lighter), var(--color-o, 1)); }
-
-// gradient
-.color-gradient-primary-top { background-image: linear-gradient(0deg, var(--gradient-primary-stop-1), var(--gradient-primary-stop-2)); }
-.color-gradient-primary-right { background-image: linear-gradient(90deg, var(--gradient-primary-stop-1), var(--gradient-primary-stop-2)); }
-.color-gradient-primary-bottom { background-image: linear-gradient(180deg, var(--gradient-primary-stop-1), var(--gradient-primary-stop-2)); }
-.color-gradient-primary-left { background-image: linear-gradient(270deg, var(--gradient-primary-stop-1), var(--gradient-primary-stop-2)); }
+.color-tiertary-darker { color: alpha(var(--color-tiertary-darker), var(--color-o, 1)); }
+.color-tiertary-dark { color: alpha(var(--color-tiertary-dark), var(--color-o, 1)); }
+.color-tiertary { color: alpha(var(--color-tiertary), var(--color-o, 1)); }
+.color-tiertary-light { color: alpha(var(--color-tiertary-light), var(--color-o, 1)); }
+.color-tiertary-lighter { color: alpha(var(--color-tiertary-lighter), var(--color-o, 1)); }
+.color-tertiary-darker { color: alpha(var(--color-tertiary-darker), var(--color-o, 1)); }
+.color-tertiary-dark { color: alpha(var(--color-tertiary-dark), var(--color-o, 1)); }
+.color-tertiary { color: alpha(var(--color-tertiary), var(--color-o, 1)); }
+.color-tertiary-light { color: alpha(var(--color-tertiary-light), var(--color-o, 1)); }
+.color-tertiary-lighter { color: alpha(var(--color-tertiary-lighter), var(--color-o, 1)); }
 
 // --------------------------------
 
@@ -85,10 +85,13 @@ mark {
 }
 
 .text-component {
-  --text-unit: 1em;
-  --space-unit: 1em;
   --line-height-multiplier: 1;
   --text-space-y-multiplier: 1;
+  
+  > * { // use Em units
+    --text-unit: 1em;
+    --space-unit: 1em;
+  }
 
   blockquote {
     padding-left: 1em;
